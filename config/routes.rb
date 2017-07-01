@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   resource :messages do
   end
 
-  resource :phone
-
   get '/texts/new', to: 'texts#new'
   post 'texts/send_text' => 'texts#send_text', as: :send_text
   root to: "messages#index"

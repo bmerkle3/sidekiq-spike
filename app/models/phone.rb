@@ -1,8 +1,9 @@
 class Phone < ApplicationRecord
 
   def send_sms(number)
-    acct_sid = ENV['TWILIO_ID']
+    #if authenticateToken error: switch to ENV['TEST_TWILIO_TOKEN'] and ENV['TEST_TWILIO_ID'] and then switch back.
     auth_token = ENV['TWILIO_TOKEN']
+    acct_sid = ENV['TWILIO_ID']
 
     @client = Twilio::REST::Client.new(acct_sid, auth_token)
 
