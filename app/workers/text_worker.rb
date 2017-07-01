@@ -4,7 +4,7 @@ class TextWorker
 
   def perform(phone_id)
     phone = Phone.find(phone_id)
-    puts "SIDEKIQ WORKER SENDING A TEXT TO #{number}"
+    puts "SIDEKIQ WORKER SENDING A TEXT TO #{phone.number}"
     phone.send_sms(phone.clean_number)
   end
 
