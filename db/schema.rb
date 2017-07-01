@@ -21,8 +21,11 @@ ActiveRecord::Schema.define(version: 20170701184542) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "phones", force: :cascade do |t|
+  create_table "texts", force: :cascade do |t|
     t.string "number"
+    t.string "body"
+    t.string "description"
+    t.datetime "send_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
