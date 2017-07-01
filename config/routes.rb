@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
   resource :messages do
-    collection do
-      post 'reply'
-    end
   end
 
+  resource :phone
+
+  get '/texts/new', to: 'texts#new'
+  post '/send_text' => 'texts#send_text', as: :send_text
   root to: "messages#index"
 
 end
