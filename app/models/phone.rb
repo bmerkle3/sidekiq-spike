@@ -15,7 +15,7 @@ class Phone < ApplicationRecord
     message = @client.account.messages.create(
         from: from,
         to:   '+1'+ number,
-        body: 'Work hard. Do good things. Change the world. sent to #{number}'
+        body: 'Work hard. Do good things. Change the world. sent to "#{number}"'
         )
   end
 
