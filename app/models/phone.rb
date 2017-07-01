@@ -2,6 +2,8 @@ class Phone < ApplicationRecord
 
   def send_sms(number)
     #if authenticateToken error: switch to ENV['TEST_TWILIO_TOKEN'] and ENV['TEST_TWILIO_ID'] and then switch back.
+    # auth_token = ENV['TEST_TWILIO_TOKEN']
+    # acct_sid = ENV['TEST_TWILIO_ID']
     auth_token = ENV['TWILIO_TOKEN']
     acct_sid = ENV['TWILIO_ID']
 

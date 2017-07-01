@@ -1,7 +1,4 @@
 class TextsController < ApplicationController
-  # def index
-  #   @phone = Phone.new
-  # end
 
   def new
     @phone = Phone.new
@@ -9,7 +6,8 @@ class TextsController < ApplicationController
 
   def send_text
     @phone = Phone.new(phone_params)
-    @phone.send_sms(@phone.clean_number)
+    TextWorker.perform_async(@phone.id)
+    # render text: "MESSAGE HAS BEEN SCHEDULED TO BE SENT"
     redirect_to root_path
   end
 
