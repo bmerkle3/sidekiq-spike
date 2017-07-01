@@ -4,7 +4,7 @@ class Phone < ApplicationRecord
     acct_sid = ENV['TWILIO_ID']
     auth_token = ENV['TWILIO_TOKEN']
 
-    @client = Twilio::REST::Client.new acct_sid, auth_token
+    @client = Twilio::REST::Client.new(acct_sid, auth_token)
 
     from = '+18722446988'
 
