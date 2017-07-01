@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'sidekiq'
 gem 'sinatra', github: 'sinatra/sinatra'
 gem 'redis', '~> 3.0'
+gem 'twilio-ruby'
+gem 'dotenv'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+  get 'twilio/reply'
+
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
 
-  resources :messages
+  resource :messages do
+    collection do
+      post 'reply'
+    end
+  end
 
   root to: "messages#index"
 
