@@ -1,5 +1,12 @@
 <%= form_for @text, url: 'send_text' do |f| %>
   <%= f.label :number %>
-  <%= f.telephone_field :number %>
+  <%= f.telephone_field :number %><br>
+  <%= f.label :body %>
+  <%= f.text_field :body %><br>
+  <%= f.label :description %>
+  <%= f.text_field :description %><br>
+  YYYY-MM-DD HH:MM (e.g., 2017-05-22 12:00)<br>
+  <%= f.label :send_at_ %>
+  <%= f.text_field :send_at %><br>
   <%= f.submit 'Send Text' %>
 <% end %>
