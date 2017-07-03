@@ -14,8 +14,6 @@ class TextsController < ApplicationController
     if @text.save
       # TextWorker.perform_in(5.minutes, @text.id)
       TextWorker.perform_async(@text.id)
-
-      # render text: "MESSAGE HAS BEEN SCHEDULED TO BE SENT"
       redirect_to root_path, :flash => { :success => str }
     else
       redirect_to texts_new_path

@@ -1,7 +1,7 @@
 class Text < ApplicationRecord
 
   def send_sms(number, text)
-    #if authenticateToken error: switch to ENV['TEST_TWILIO_TOKEN'] and ENV['TEST_TWILIO_ID'] and then switch back.
+    #if authenticateToken error: comment out the 'protect_from_forgery with: :exception' method in application_controller.rb
     # auth_token = ENV['TEST_TWILIO_TOKEN']
     # acct_sid = ENV['TEST_TWILIO_ID']
     auth_token = ENV['TWILIO_TOKEN']
